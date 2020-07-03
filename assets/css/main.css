@@ -2514,7 +2514,7 @@ ul.feature-icons li>p.icons {
 	margin: 0px;
 	display: inline-block;
 	border-radius: 50%;
-	background-color: #4acaa8;
+	background-color: rgb(47, 113, 232);
 	height: 50px;
 	position: relative;
 	color: white;
@@ -2694,7 +2694,7 @@ table.alt tfoot {
 	-webkit-justify-content: space-between;
 	-ms-justify-content: space-between;
 	justify-content: space-between;
-	background: #4acaa8;
+	background: rgb(0, 191, 165);
 	color: #d2f2e9;
 	height: 100%;
 	overflow-y: auto;
