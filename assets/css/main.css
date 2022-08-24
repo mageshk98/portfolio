@@ -1,9 +1,9 @@
-@import url("fontawesome-all.min.css");
+/* @import url("fontawesome-all.min.css"); */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
 	Read Only by HTML5 UP
-	html5up.net | @ajlkn
+	html5up.net | @avatar
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
@@ -164,6 +164,8 @@ textarea {
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: #00bfa5;
 }
 
 *,
@@ -205,7 +207,6 @@ a {
   -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-  border-bottom: solid 1px #e4e4e4;
   color: inherit;
   text-decoration: none;
 }
@@ -229,7 +230,10 @@ i {
 p {
   margin: 0 0 1.25em 0;
 }
-
+*::selection {
+  background-color: #4acaa8;
+  color: white;
+}
 h1,
 h2,
 h3,
@@ -2293,22 +2297,31 @@ input[type="radio"] + label:before {
 }
 
 .image.avatar {
+  background-image: url(../images/avatar_latest.png);
   border-radius: 100%;
   overflow: hidden;
-}
-
-.image.avatar img {
-  border-radius: 100%;
-  display: block;
-  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  width: 180px;
+  height: 180px;
+  transform: scale(1);
 }
 
 .image.main {
   display: block;
+  position: relative;
   height: 20em;
   border-radius: 0;
 }
 
+.image.main::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.539);
+}
 .image.main img {
   border-radius: 0;
 }
@@ -2341,7 +2354,6 @@ ul.alt {
 }
 
 ul.alt li {
-  border-top: solid 2px #f4f4f4;
   padding: 0.5em 0;
 }
 
@@ -2482,8 +2494,7 @@ ul.projects-list {
   padding-left: 0;
 }
 
-ul.feature-icons li,
-ul.projects-list {
+ul.feature-icons li {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -2495,26 +2506,64 @@ ul.projects-list {
   font-size: 19px;
 }
 ul.projects-list {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
   width: 100%;
 }
+
+ul.projects-list .project-card {
+  display: flex;
+  align-items: baseline;
+  grid-gap: 0.4em;
+  min-width: 100px;
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #b2b2b2;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  transform: scale(0.95);
+}
+ul.projects-list .project-card:hover {
+  transform: scale(1);
+  box-shadow: 0px 4px 10px #dfd9d9;
+}
+ul.projects-list .project-card i {
+  color: #2bcd60;
+}
+
+.project-card h3 {
+  font-size: 16px;
+  color: #606360;
+}
+.project-card p {
+  font-size: 14px;
+  color: #8b8989;
+  overflow: hidden;
+  line-height: 30px;
+  margin: 0;
+}
+
 ul.feature-icons li > p.icons {
   min-width: 50px;
   margin: 0px;
-  display: inline-block;
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(47, 113, 232);
   height: 50px;
   position: relative;
   color: white;
   margin-right: 10px;
+  border-radius: 30px;
 }
 
 ul.feature-icons li > p.icons > i {
   font-size: 24px;
-  position: absolute;
-  top: 13px;
-  left: 14px;
 }
 
 ul.feature-icons li:before {
@@ -2725,22 +2774,20 @@ table.alt tfoot {
 }
 
 #header > header {
-  -moz-flex-shrink: 0;
-  -webkit-flex-shrink: 0;
-  -ms-flex-shrink: 0;
-  flex-shrink: 0;
-  padding: 3em;
-}
-
-#header > header .avatar {
-  display: block;
-  margin: 0 auto 2.25em auto;
-  width: 8em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
 }
 
 #header > header h1 {
   font-size: 1.75em;
   margin: 0;
+  display: inline-block;
+  line-height: 3rem;
+  /* animation: typewriter 4s steps(15) 1s both,
+    blinkCursor 750ms steps(20) infinite; */
 }
 
 #header > header p {
@@ -2939,6 +2986,7 @@ table.alt tfoot {
   html,
   body {
     overflow-x: hidden;
+    background-color: #00bfa5;
   }
 
   body,
@@ -3258,7 +3306,7 @@ table.alt tfoot {
   }
 }
 
-#four > section {
+#contact > section {
   -moz-flex-basis: 50%;
   -webkit-flex-basis: 50%;
   -ms-flex-basis: 50%;
@@ -3275,11 +3323,11 @@ table.alt tfoot {
   border-left: solid 2px #e2e2e2;
 }
 
-#four > section:first-child {
+#contact > section:first-child {
   border-left: 0;
 }
 
-#four > section.split {
+#contact > section.split {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -3291,44 +3339,46 @@ table.alt tfoot {
   padding: 0;
 }
 
-#four > section.split > section {
+#contact > section.split > section {
   padding: 3rem 4rem 1rem 4rem;
   border-top: solid 2px #e2e2e2;
 }
 
-#four > section.split > section a {
+#contact > section.split a {
   display: block;
   border-bottom: none;
 }
 
-#four > section.split > section:first-child {
+#contact > section.split a:hover {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+#contact > section.split li i {
+  font-size: 1.5rem;
+}
+
+#contact > section.split > section:first-child {
   padding: 5rem 4rem 1rem 4rem;
   border-top: 0;
 }
 
-#four > section.split > section:last-child {
+#contact > section.split > section:last-child {
   padding: 3rem 4rem 3rem 4rem;
 }
 
-#four > section.split.contact > section {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
+#contact > section.split.contact {
+  background-color: #4cc9a8;
+  color: white;
+}
+#contact > section.split.contact h3 {
+  color: white;
+}
+#contact > section.split.contact > .container {
   padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
-}
-
-#four > section.split.contact > section.alt {
-  -moz-align-items: -moz-flex-start;
-  -webkit-align-items: -webkit-flex-start;
-  -ms-align-items: -ms-flex-start;
-  align-items: flex-start;
-}
-
-#four > section.split.contact > section.alt > :last-child {
-  margin-top: -0.325rem;
-  margin-bottom: 1em;
+  align-items: center;
+  justify-content: center;
 }
 
 #footer form label,
@@ -3391,5 +3441,23 @@ table.alt tfoot {
   ul.feature-icons li {
     display: block;
     width: 100%;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: white;
+  }
+  to {
+    border-right-color: transparent;
   }
 }
