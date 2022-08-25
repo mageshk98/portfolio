@@ -1,5 +1,7 @@
 /* @import url("fontawesome-all.min.css"); */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url("https://fonts.googleapis.com/css?family=Rubik+Maze:400,400italic,700,700italic|Source+Code+Pro:400");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /*
 	Read Only by HTML5 UP
@@ -196,7 +198,7 @@ input,
 select,
 textarea {
   color: #888;
-  font-family: "Lato", sans-serif;
+  font-family: "Ubuntu";
   font-size: 16pt;
   font-weight: 400;
   line-height: 1.75em;
@@ -2321,13 +2323,13 @@ input[type="radio"] + label:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: monospace;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.539);
   font-size: 29px;
   font-weight: 600;
   color: #bcbbbb;
+  font-family: "Rubik Maze";
 }
 .image.main img {
   border-radius: 0;
@@ -2530,7 +2532,7 @@ ul.projects-list .project-card {
   padding: 15px;
   background-color: #fff;
   border-radius: 10px;
-  border: 1px solid #b2b2b2;
+  border: 1px solid #f4f4f4;
   cursor: pointer;
   transition: 0.3s ease-in-out;
   transform: scale(0.95);
@@ -2541,6 +2543,10 @@ ul.projects-list .project-card:hover {
 }
 ul.projects-list .project-card i {
   color: #2bcd60;
+}
+
+.project-card .website-reference {
+  padding-right: 10px;
 }
 
 .project-card h3 {
@@ -3253,6 +3259,8 @@ table.alt tfoot {
 
   #header > header .avatar {
     margin: 0 auto 1.6875em auto;
+    width: 130px;
+    height: 130px;
   }
 
   #header > header h1 {
@@ -3445,7 +3453,6 @@ table.alt tfoot {
   }
 
   ul.feature-icons li {
-    display: block;
     width: 100%;
   }
 }
